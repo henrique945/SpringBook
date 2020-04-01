@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livros</title>
+</head>
+
+<body>
+    <h1>CADASTRAR LIVROS</h1>
+    <form th:action="@{/book}" method="POST">
+        <input type="text" name="nome">
+        <input type="text" name="autor">
+        <input type="number" name="paginas">
+        <input type="submit" value="Cadastrar">
+    </form>
+
+    <h1>LISTAR LIVROS</h1>
+    <table>
+        <tr th:each="book: ${books}">
+            <td th:text="${book.id}">
+                <td th:text="${book.nome}">
+                    <td th:text="${book.autor}">
+                        <td th:text="${book.disponivel}">
+                            <td th:text="${book.paginas}">
+        </tr>
+    </table>
+</body>
+
+</html>
